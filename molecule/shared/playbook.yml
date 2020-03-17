@@ -1,5 +1,5 @@
 - name: converge
   hosts: all
   roles:
-    - role: redhat_satellite6_storage
+    - role: ansible-role-redhat_satellite6_storage
   post_tasks: []
