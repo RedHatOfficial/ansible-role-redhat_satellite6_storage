@@ -1,9 +1,8 @@
 galaxy_info:
   role_name: satellite_storage
   author: Ian Tewksbury, Christian Stankowic
-  description: Ansible role for configuring logical volumes and mount points for Foreman/Katello and Red Hat Satellite Servers and Proxy Servers/Capsules
+  description: Configuring storage for Foreman/Katello and Red Hat Satellite
   company: Red Hat, Inc.
-  issue_tracker_url: https://github.com/RedHatOfficial/ansible-role-redhat_satellite6_storage/issues
   license: GPLv3
   min_ansible_version: 2.8
   platforms:

@@ -4,16 +4,12 @@ dependency:
     role-file: molecule/shared/requirements.yml
 driver:
   name: openstack
-lint:
-  name: yamllint
   options:
     config-file: tests/yamllint.yml
 platforms:
   - name: test-redhat_satellite6_storage
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
   playbooks:
     prepare: ../shared/prepare.yml
     converge: ../shared/playbook.yml
@@ -27,10 +23,12 @@ verifier:
     # Add a -v so you see the individual test names,
     # particularly useful with parameterized tests
     v: true
-  lint:
-    name: flake8
   # Using the shared directory is useful for sharing tests across scenarios,
   # but is not a requirement. For scenario specific tests, add the appropriate
   # file path to the test or test directory below
   additional_files_or_dirs:
     - ../../shared/tests
+lint: |
+    yamllint .
+    ansible-lint
+    flake8
